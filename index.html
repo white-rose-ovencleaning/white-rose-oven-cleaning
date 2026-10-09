@@ -1025,6 +1025,33 @@
     .hero{ padding-top: 60px; }
     .nav-inner{ flex-wrap: wrap; }
   }
+  /* FORCE the before-and-after boxes to be tall */
+.before-after .compare-grid .compare-wrap {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.before-after .compare-grid .compare-frame {
+  width: 100% !important;
+  max-width: none !important;
+  height: 600px !important;
+  min-height: 600px !important;
+  aspect-ratio: auto !important;
+}
+
+.before-after .compare-frame > img,
+.before-after .compare-frame .compare-before-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+@media (max-width: 600px) {
+  .before-after .compare-grid .compare-frame {
+    height: 450px !important;
+    min-height: 450px !important;
+  }
+}
 </style>
 </head>
 <body>
