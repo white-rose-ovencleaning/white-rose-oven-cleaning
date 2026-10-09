@@ -524,9 +524,68 @@
   }
 
   .before-after{ background: var(--cream); padding: 30px 0 78px; }
-  .compare-wrap{
-    max-width: 420px;
-    margin: 0 auto;
+  .compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+  <div class="compare-wrap reveal">
+  <h3>Hob cleaning transformation</h3>
+
+  <div class="compare-frame">
+    <img class="compare-after"
+         src=""
+         alt="Hob after cleaning">
+
+    <div class="compare-before-wrap">
+      <img src="images/hob-before.jpg"
+           alt="Hob before cleaning">
+    </div>
+
+    <div class="compare-divider" aria-hidden="true"></div>
+
+    <input class="compare-slider"
+           type="range"
+           min="0"
+           max="100"
+           value="50"
+           aria-label="Compare hob before and after cleaning">
+  </div>
+
+  <div class="compare-labels">
+    <span>Before</span>
+    <span>After</span>
+  </div>
+</div>
+  
+.compare-wrap {
+  width: 100%;
+  max-width: 420px;
+  min-width: 0;
+  margin: 0 auto;
+}
+
+.compare-wrap h3 {
+  color: var(--navy);
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+}
+
+/* Two columns on tablets */
+@media (max-width: 900px) {
+  .compare-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* One column on mobile phones */
+@media (max-width: 600px) {
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
   }
   .compare-frame{
     position: relative;
@@ -1115,49 +1174,83 @@
     <div class="section-head reveal">
       <span class="eyebrow">Before &amp; after</span>
       <h2>From grimy to gleaming</h2>
+      <p>See the difference a professional oven clean can make.</p>
     </div>
 
-    <div class="compare-wrap reveal">
-      <div class="compare-frame" aria-label="Before and after oven cleaning comparison slider">
-        <img class="compare-after" src="https://github.com/white-rose-ovencleaning/white-rose-oven-cleaning/blob/main/PHOTO-2026-08-28-15-54-20%202.jpg?raw=true" alt="After oven cleaning result">
-        <div class="compare-before-wrap" id="compareBeforeWrap">
-          <img src="https://github.com/white-rose-ovencleaning/white-rose-oven-cleaning/blob/main/PHOTO-2026-08-28-15-54-21%202.jpg?raw=true" alt="Before oven cleaning result">
+    <div class="compare-grid">
+
+      <!-- SLIDER 1 -->
+      <div class="compare-wrap reveal">
+        <h3>Single oven transformation</h3>
+        <div class="compare-frame">
+          <img class="compare-after"
+               src="images/oven-after-1.jpg"
+               alt="Clean oven after professional cleaning">
+
+          <div class="compare-before-wrap">
+            <img src="images/oven-before-1.jpg"
+                 alt="Dirty oven before professional cleaning">
+          </div>
+
+          <div class="compare-divider" aria-hidden="true"></div>
+
+          <input class="compare-slider" type="range"
+                 min="0" max="100" value="50"
+                 aria-label="Compare single oven before and after cleaning">
         </div>
-        <div class="compare-divider" id="compareDivider" aria-hidden="true"></div>
-        <input class="compare-slider" id="compareSlider" type="range" min="0" max="100" value="50" aria-label="Move to compare before and after"> 
-      </div>
-      <div class="compare-labels" aria-hidden="true">
-        <span>Before</span>
-        <span>After</span>
-      </div>
-    </div>
-    <div class="compare-wrap reveal">
-      <div class="compare-frame" aria-label="Before and after oven cleaning comparison slider">
-        <img class="compare-after" src="...?raw=true" alt="After oven cleaning result">
-        <div class="compare-before-wrap" id="compareBeforeWrap">
-          <img src="...?raw=true" alt="Before oven cleaning result">
+        <div class="compare-labels">
+          <span>Before</span><span>After</span>
         </div>
-        <div class="compare-divider" id="compareDivider" aria-hidden="true"></div>
-        <input class="compare-slider" id="compareSlider" type="range" min="0" max="100" value="50" aria-label="Move to compare before and after"> 
       </div>
-      <div class="compare-labels" aria-hidden="true">
-        <span>Before</span>
-        <span>After</span>
-      </div>
-    </div>
-    <div class="compare-wrap reveal">
-      <div class="compare-frame" aria-label="Before and after oven cleaning comparison slider">
-        <img class="compare-after" src="...?raw=true" alt="After oven cleaning result">
-        <div class="compare-before-wrap" id="compareBeforeWrap">
-          <img src="...?raw=true" alt="Before oven cleaning result">
+
+      <!-- SLIDER 2 -->
+      <div class="compare-wrap reveal">
+        <h3>Oven door glass restoration</h3>
+        <div class="compare-frame">
+          <img class="compare-after"
+               src="images/oven-after-2.jpg"
+               alt="Oven door glass after cleaning">
+
+          <div class="compare-before-wrap">
+            <img src="images/oven-before-2.jpg"
+                 alt="Oven door glass before cleaning">
+          </div>
+
+          <div class="compare-divider" aria-hidden="true"></div>
+
+          <input class="compare-slider" type="range"
+                 min="0" max="100" value="50"
+                 aria-label="Compare oven door glass before and after cleaning">
         </div>
-        <div class="compare-divider" id="compareDivider" aria-hidden="true"></div>
-        <input class="compare-slider" id="compareSlider" type="range" min="0" max="100" value="50" aria-label="Move to compare before and after"> 
+        <div class="compare-labels">
+          <span>Before</span><span>After</span>
+        </div>
       </div>
-      <div class="compare-labels" aria-hidden="true">
-        <span>Before</span>
-        <span>After</span>
+
+      <!-- SLIDER 3 -->
+      <div class="compare-wrap reveal">
+        <h3>Range cooker transformation</h3>
+        <div class="compare-frame">
+          <img class="compare-after"
+               src="images/oven-after-3.jpg"
+               alt="Range cooker after cleaning">
+
+          <div class="compare-before-wrap">
+            <img src="images/oven-before-3.jpg"
+                 alt="Range cooker before cleaning">
+          </div>
+
+          <div class="compare-divider" aria-hidden="true"></div>
+
+          <input class="compare-slider" type="range"
+                 min="0" max="100" value="50"
+                 aria-label="Compare range cooker before and after cleaning">
+        </div>
+        <div class="compare-labels">
+          <span>Before</span><span>After</span>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1684,21 +1777,26 @@
     revealEls.forEach(function(el){ el.classList.add('in'); });
   }
 
-  // before / after comparison slider
-  var compareSlider = document.getElementById('compareSlider');
-  var compareBeforeWrap = document.getElementById('compareBeforeWrap');
-  var compareDivider = document.getElementById('compareDivider');
+  // Before / after comparison sliders
+  document.querySelectorAll('.compare-wrap').forEach(function(card) {
+    var slider = card.querySelector('.compare-slider');
+    var beforeWrap = card.querySelector('.compare-before-wrap');
+    var divider = card.querySelector('.compare-divider');
 
-  if (compareSlider && compareBeforeWrap && compareDivider) {
+    if (!slider || !beforeWrap || !divider) return;
+
     function updateCompareSlider() {
-      var value = compareSlider.value;
-      compareBeforeWrap.style.clipPath = 'inset(0 ' + (100 - value) + '% 0 0 round 18px)';
-      compareDivider.style.left = value + '%';
+      var value = Number(slider.value);
+
+      beforeWrap.style.clipPath =
+        'inset(0 ' + (100 - value) + '% 0 0 round 18px)';
+
+      divider.style.left = value + '%';
     }
 
-    compareSlider.addEventListener('input', updateCompareSlider);
+    slider.addEventListener('input', updateCompareSlider);
     updateCompareSlider();
-  }
+  });
 </script>
 
 </body>
